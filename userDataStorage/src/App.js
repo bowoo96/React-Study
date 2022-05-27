@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import AddUser from './component/AddUser';
-import UserDataList from './component/UserDataList';
+import AddUser from './components/Users/AddUser';
+import UserDataList from './components/Users/UserDataList';
+import Card from './components/UI/Card';
+import classes from './components/Users/UserDataList.module.css';
 
 function App() {
   // userData를 배열에 넣어주는 작업, boolean값으로 component 보이게 하는 작업
@@ -25,7 +27,7 @@ function App() {
     <div>
       {/* 최종적으로 조건부 렌더링을 통해서, data유무에 true false를 주고, 그에 맞으면 리스트가 보이도록 설정을 해야한다. */}
       <AddUser onUserData={saveUserData} />
-      {showComponent && <ul>{addComponent}</ul>}
+      {showComponent && <Card className={classes.users}><ul>{addComponent}</ul></Card>}
     </div>
   );
 }
