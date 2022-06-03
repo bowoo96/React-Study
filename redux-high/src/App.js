@@ -5,7 +5,7 @@ import Products from './components/Shop/Products';
 import {useSelector} from 'react-redux'; 
 
 function App() {
-  const showBooleanData = useSelector(state => state.showCart);
+  const showBooleanData = useSelector(state => state.cart.showCart);
 
   return (
       <Layout>

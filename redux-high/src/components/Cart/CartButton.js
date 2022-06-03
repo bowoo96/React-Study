@@ -1,15 +1,13 @@
-import { useSelector,useDispatch } from 'react-redux';
-import { cartActions } from '../Store/store';
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../Store/cart';
 
 import classes from './CartButton.module.css';
 
 const CartButton = (props) => {
   const dispatch = useDispatch();
-  const showData = useSelector(state => state.showCart);
 
   const showCartHandler = () => {
     dispatch(cartActions.show());
-    console.log(showData);
   };
 
   return (
